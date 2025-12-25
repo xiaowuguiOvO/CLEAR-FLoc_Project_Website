@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization.">
+  <meta name="keywords" content="CLEAR-FLoc, Localization, Deep Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,32 +88,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              Shiyong Meng,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              Tao Zou,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              Bolei Chen*
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block">School of Computer Science and Engineering, Central South University</span>
           </div>
 
           <div class="column has-text-centered">
@@ -175,79 +162,10 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 
 
 <section class="section">
@@ -258,184 +176,268 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Since floorplan data is readily available, long-term persistent, and robust to changes in visual appearance, visual <strong>F</strong>loorplan <strong>Loc</strong>alization (FLoc) has garnered significant attention. Existing methods either ingeniously match geometric priors or utilize sparse semantics to reduce FLoc uncertainty. However, they still suffer from ambiguous FLoc caused by repetitive structures in minimalist floorplans. Moreover, expensive but limited semantic annotations restrict their applicability. To address these issues, we propose a visual-geometric <strong>C</strong>ontrastive <strong>L</strong>earning (CL) technique to disambiguate depth-enhanced visual Floc, without requiring additional semantic labels. Our solution begins with a ray regression predictor tailored for ray-casting-based FLoc, predicting high-accuracy FLoc candidates using depth estimation expertise. In addition, a cross-scene CL method with dual-level constraints is proposed to achieve strict matches between depth-aware visual features and corresponding geometric structures in the floorplan. Such strict matches effectively eliminate FLoc ambiguity and determine the optimal imaging pose from FLoc candidates. Exhaustive comparative studies on two standard visual Floc benchmarks demonstrate that our method outperforms state-of-the-art semantic-based methods, achieving significant improvements in both robustness and accuracy.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            The CLEAR-FLoc pipeline: our method begins with a ray regression predictor for candidate pose generation, followed by a visual-geometric contrastive learning module that achieves strict matches between depth-aware visual features and floorplan structures.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
+          <img src="./static/images/main_pipeline.png" alt="CLEAR-FLoc Pipeline" style="width: 100%; height: auto;">
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    <!--/ Method. -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        
+        <!-- Table 1 -->
+        <div class="content has-text-justified">
+          <p class="has-text-centered">
+            <strong>Table 1:</strong> Comparative studies between our visual FLoc method with baselines on Gibson(f) and Gibson(g) datasets.
+          </p>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
+              <thead>
+                <tr>
+                  <th rowspan="2" class="is-vcentered">Method <span class="is-size-7">(Venue)</span></th>
+                  <th colspan="4">Gibson(f) R@</th>
+                  <th colspan="4">Gibson(g) R@</th>
+                </tr>
+                <tr>
+                  <th>0.1 m</th>
+                  <th>0.5 m</th>
+                  <th>1 m</th>
+                  <th>1 m 30°</th>
+                  <th>0.1 m</th>
+                  <th>0.5 m</th>
+                  <th>1 m</th>
+                  <th>1 m 30°</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="has-text-left">PF-net <span class="is-size-7">(CoRL 2018)</span></td>
+                  <td>0</td><td>2.0</td><td>6.9</td><td>1.2</td>
+                  <td>1.0</td><td>1.9</td><td>5.6</td><td>1.9</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">MCL <span class="is-size-7">(ICRA 1999)</span></td>
+                  <td>1.6</td><td>4.9</td><td>12.1</td><td>8.2</td>
+                  <td>2.3</td><td>6.2</td><td>9.7</td><td>7.3</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">LASER <span class="is-size-7">(CVPR 2022)</span></td>
+                  <td>0.4</td><td>6.7</td><td>13.0</td><td>10.4</td>
+                  <td>0.7</td><td>7.0</td><td>11.8</td><td>9.5</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">F³Loc <span class="is-size-7">(CVPR 2024)</span></td>
+                  <td>4.7</td><td>28.6</td><td>36.6</td><td>35.1</td>
+                  <td>4.3</td><td>26.7</td><td>33.7</td><td>32.3</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">3DP <span class="is-size-7">(ACM MM 2025)</span></td>
+                  <td>5.3</td><td>33.2</td><td>39.8</td><td>38.4</td>
+                  <td>9.4</td><td>37.4</td><td>43.1</td><td>41.5</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">RSK <span class="is-size-7">(AAAI 2026)</span></td>
+                  <td>8.3</td><td>38.5</td><td>45.3</td><td>43.6</td>
+                  <td>8.7</td><td>36.4</td><td>42.3</td><td>40.4</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">3DP & RSK</td>
+                  <td>10.9</td><td>42.7</td><td>47.9</td><td>46.5</td>
+                  <td>10.7</td><td>38.8</td><td>44.4</td><td>42.8</td>
+                </tr>
+                <tr style="background-color: #f5f5f5;">
+                  <td class="has-text-left">Ours w/o Dis.</td>
+                  <td>12.0</td><td>45.8</td><td>50.6</td><td>49.2</td>
+                  <td>12.3</td><td>45.0</td><td>49.9</td><td>48.2</td>
+                </tr>
+                <tr style="background-color: #e8e8e8; font-weight: bold;">
+                  <td class="has-text-left">Ours</td>
+                  <td>13.1</td><td>50.9</td><td>56.7</td><td>55.4</td>
+                  <td>12.4</td><td>47.0</td><td>52.5</td><td>51.3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <br>
+
+        <!-- Table 2 -->
+        <div class="content has-text-justified">
+          <p class="has-text-centered">
+            <strong>Table 2:</strong> Comparative studies between our visual FLoc method with baselines on the Structured3D (full) dataset.
+            <br><span class="is-size-7">Oracle indicates localization using ground truth geometry and semantic rays, where semantic labels include doors, windows, and walls.</span>
+          </p>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth has-text-centered">
+              <thead>
+                <tr>
+                  <th rowspan="2" class="is-vcentered">Method <span class="is-size-7">(Venue)</span></th>
+                  <th colspan="4">Structured3D (full) R@</th>
+                  <th rowspan="2" class="is-vcentered">Sem.</th>
+                </tr>
+                <tr>
+                  <th>0.1 m</th>
+                  <th>0.5 m</th>
+                  <th>1 m</th>
+                  <th>1 m 30°</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="has-text-left">PF-net <span class="is-size-7">(CoRL 2018)</span></td>
+                  <td>0.2</td><td>1.3</td><td>3.2</td><td>0.9</td>
+                  <td rowspan="7" class="is-vcentered">no</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">MCL <span class="is-size-7">(ICRA 1999)</span></td>
+                  <td>1.3</td><td>5.2</td><td>7.8</td><td>6.4</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">LASER <span class="is-size-7">(CVPR 2022)</span></td>
+                  <td>0.7</td><td>6.4</td><td>10.4</td><td>8.7</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">F³Loc <span class="is-size-7">(CVPR 2024)</span></td>
+                  <td>1.5</td><td>14.6</td><td>22.4</td><td>21.3</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">3DP <span class="is-size-7">(ACM MM 2025)</span></td>
+                  <td>5.6</td><td>27.4</td><td>55.5</td><td>24.0</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">RSK <span class="is-size-7">(AAAI 2026)</span></td>
+                  <td>6.4</td><td>28.6</td><td>56.9</td><td>25.2</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">3DP & RSK</td>
+                  <td>6.7</td><td>26.8</td><td>54.7</td><td>24.2</td>
+                </tr>
+                <tr style="border-top: 2px solid #dbdbdb;">
+                  <td class="has-text-left">SemRayLocₛ <span class="is-size-7">(ICCV 2025)</span></td>
+                  <td>5.4</td><td>41.9</td><td>53.5</td><td>52.6</td>
+                  <td rowspan="5" class="is-vcentered">yes</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left" style="padding-left: 2em;">+ 3DP <span class="is-size-7">(ACM MM 2025)</span></td>
+                  <td>5.5</td><td>46.6</td><td>56.2</td><td>56.7</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left" style="padding-left: 2em;">+ RSK <span class="is-size-7">(AAAI 2026)</span></td>
+                  <td>6.2</td><td>48.1</td><td>59.9</td><td>58.8</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left" style="padding-left: 2em;">+ 3DP & RSK</td>
+                  <td>7.1</td><td>48.9</td><td>61.5</td><td>60.0</td>
+                </tr>
+                <tr>
+                  <td class="has-text-left">SemRayLocᵣ <span class="is-size-7">(ICCV 2025)</span></td>
+                  <td>5.7</td><td>45.5</td><td>58.8</td><td>57.5</td>
+                </tr>
+                <tr style="border-top: 2px solid #dbdbdb; background-color: #f5f5f5;">
+                  <td class="has-text-left">Ours w/o Dis.</td>
+                  <td>5.5</td><td>34.2</td><td>40.4</td><td>39.3</td>
+                  <td rowspan="2" class="is-vcentered">no</td>
+                </tr>
+                <tr style="background-color: #e8e8e8; font-weight: bold;">
+                  <td class="has-text-left">Ours</td>
+                  <td>10.0</td><td>59.0</td><td>67.0</td><td>66.0</td>
+                </tr>
+                <tr style="border-top: 2px solid #dbdbdb;">
+                  <td class="has-text-left">Oracle w/ sem</td>
+                  <td>61.0</td><td>93.9</td><td>94.9</td><td>94.6</td>
+                  <td>yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- Qualitative Results. -->
+    <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
+        <!-- Thumbnails Selector -->
+        <div class="columns is-multiline is-centered is-mobile" id="vis-thumbnails" style="padding: 10px;">
+            <!-- Thumbnails will be injected here by JS -->
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
+
+        <br>
+
+        <!-- Comparison View -->
+        <div class="columns is-centered is-mobile" style="margin-left: 10px; margin-right: 10px;">
+          <div class="column is-3">
+            <h4 class="title is-6">SemRay</h4>
+            <img id="vis-semray" src="" alt="SemRay Result" class="method-vis-img">
           </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
+          <div class="column is-3">
+            <h4 class="title is-6">UnLoc</h4>
+            <img id="vis-unlocs" src="" alt="UnLoc Result" class="method-vis-img">
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+          <div class="column is-3">
+            <h4 class="title is-6">Disamb</h4>
+            <img id="vis-disamb" src="" alt="Disamb Result" class="method-vis-img">
           </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
+          <div class="column is-3">
+            <h4 class="title is-6">Ours</h4>
+            <img id="vis-ours" src="" alt="Ours Result" class="method-vis-img">
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
+    <!--/ Qualitative Results. -->
+
+    <style>
+      .vis-thumb {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        width: 100%;
+        height: auto; /* Ensure aspect ratio */
+      }
+      .vis-thumb:hover {
+        transform: scale(1.05);
+      }
+      .is-active-thumb {
+        border-color: #3273dc !important;
+        box-shadow: 0 0 5px rgba(50, 115, 220, 0.5);
+      }
+      .method-vis-img {
+        width: 100%;
+        height: auto; /* Ensure aspect ratio */
+        border: 1px solid #ddd;
+      }
+    </style>
+
+    <!-- BibTeX -->
+
+    <!-- Paper video. -->
+
+
+
+
+
 
   </div>
 </section>
@@ -444,11 +446,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{meng2025clearfloc,
+  author    = {Shiyong Meng and Tao Zou and Bolei Chen},
+  title     = {CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization},
+  journal   = {Proceedings of the XXX},
+  year      = {2025},
 }</code></pre>
   </div>
 </section>
