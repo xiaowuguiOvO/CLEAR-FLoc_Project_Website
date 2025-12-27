@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization.">
+        content="CLEAR-FLoc: Using Dual-Level Visual-Geometric Contrasts to Disambiguate Depth-Aware Visual Floorplan Localization.">
   <meta name="keywords" content="CLEAR-FLoc, Localization, Deep Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization</title>
+  <title>CLEAR-FLoc: Using Dual-Level Visual-Geometric Contrasts to Disambiguate Depth-Aware Visual Floorplan Localization</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -68,7 +68,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization</h1>
+          <h1 class="title is-1 publication-title">CLEAR-FLoc: Using Dual-Level Visual-Geometric Contrasts to Disambiguate Depth-Aware Visual Floorplan Localization</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               Shiyong Meng,</span>
@@ -137,7 +137,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Since floorplan data is readily available, long-term persistent, and robust to changes in visual appearance, visual <strong>F</strong>loorplan <strong>Loc</strong>alization (FLoc) has garnered significant attention. Existing methods either ingeniously match geometric priors or utilize sparse semantics to reduce FLoc uncertainty. However, they still suffer from ambiguous FLoc caused by repetitive structures in minimalist floorplans. Moreover, expensive but limited semantic annotations restrict their applicability. To address these issues, we propose a visual-geometric <strong>C</strong>ontrastive <strong>L</strong>earning (CL) technique to disambiguate depth-enhanced visual Floc, without requiring additional semantic labels. Our solution begins with a ray regression predictor tailored for ray-casting-based FLoc, predicting high-accuracy FLoc candidates using depth estimation expertise. In addition, a cross-scene CL method with dual-level constraints is proposed to achieve strict matches between depth-aware visual features and corresponding geometric structures in the floorplan. Such strict matches effectively eliminate FLoc ambiguity and determine the optimal imaging pose from FLoc candidates. Exhaustive comparative studies on two standard visual Floc benchmarks demonstrate that our method outperforms state-of-the-art semantic-based methods, achieving significant improvements in both robustness and accuracy.
+            Since floorplan data is readily available, long-term persistent, and robust to changes in visual appearance, visual <strong>F</strong>loorplan <strong>Loc</strong>alization (FLoc) has garnered significant attention. Existing methods either ingeniously match geometric priors or utilize sparse semantics to reduce FLoc uncertainty. However, they still suffer from ambiguous FLoc caused by repetitive structures within minimalist floorplans. Moreover, expensive but limited semantic annotations restrict their applicability. To address these issues, we propose using dual-level visual-geometric contrasts to disambiguate depth-aware visual Floc, without requiring additional semantic labels. Our solution begins with a ray regression predictor tailored for ray-casting-based FLoc, predicting high-accuracy FLoc candidates using depth estimation expertise. In addition, a novel contrastive learning method with position-level and orientation-level constraints is proposed to strictly match depth-aware visual features with the corresponding geometric structures in the floorplan. Such matches can effectively eliminate FLoc ambiguity and determine the optimal imaging pose from FLoc candidates. Exhaustive comparative studies on two standard visual Floc benchmarks demonstrate that our method outperforms the state-of-the-art semantic-based method, achieving significant improvements in both robustness and accuracy.
           </p>
         </div>
       </div>
@@ -411,7 +411,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{meng2025clearfloc,
   author    = {Shiyong Meng and Tao Zou and Bolei Chen},
-  title     = {CLEAR-FLoc: Contrastive Learning for Elimination of Ambiguity in RGB Floorplan Localization},
+  title     = {CLEAR-FLoc: Using Dual-Level Visual-Geometric Contrasts to Disambiguate Depth-Aware Visual Floorplan Localization},
   journal   = {Proceedings of the XXX},
   year      = {2025},
 }</code></pre>
